@@ -7,11 +7,10 @@ terraform {
     }
   }
   backend "s3" {
-    bucket         = "longiter-eks-tf-state"
-    region         = "ap-southeast-1"
-    key            = "eks/terraform.tfstate"
-    dynamodb_table = "longiter-eks-tf-lock"
-    encrypt        = true
+    bucket       = "longiter-eks-tf-state"
+    key          = "eks/terraform.tfstate"
+    region       = "ap-southeast-1"
+    use_lockfile = true
   }
 }
 
